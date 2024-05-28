@@ -1,80 +1,180 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: "poppins", sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'JetBrains Mono', monospace;
 }
-body{
-    background-color: #c9d6ff;
+
+.required {
+    color: red;
+    padding-left: 0.5rem;
 }
-.container{
+
+.password-requirements {
+    list-style: none;
+    padding: 0.5rem 0 0 0;
+    margin-top: 10px;
+}
+
+.password-requirements li {
+    font-size: 0.875rem;
+    color: #555555;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+.password-requirements i {
+    margin-right: 5px;
+    color: #757575;
+    margin-top: 5px;
+}
+
+body {
+    background-image: url('Background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
     background: #fff;
-    width:450px;
-    padding:1.5rem;
-    margin:50px auto;
-    border-radius:10px;
-    box-shadow:0 20px 35px rgba(0,0,1,0.9);
+    width: 450px;
+    padding: 1.5rem;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0, 0, 1, 0.9);
 }
-form{
-    margin:0 2rem;
+
+form {
+    margin: 0 2rem;
 }
-.form-title{
-    font-size: 1.5rem;
-    font-weight:bold;
-    text-align: center;
-    padding:1.3rem;
-    margin-bottom:0.4rem;
+
+.form-title {
+    font-size: 2rem;
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Center the text */
+    margin-bottom: 0.4rem;
+    font-family: 'JetBrains Mono', monospace; /* Apply the imported Google Font */
 }
-input{
-    color:inherit;
-    width:100%;
+
+.form-subtitle {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: normal; /* Normal weight for subtitle */
+    color: rgb(85, 85, 85); /* Grey color for subtitle */
+    margin-top: 0.2rem; /* Add some spacing above the subtitle */
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+input {
+    color: inherit;
+    width: 100%;
     background-color: transparent;
-    border:none;
-    border-bottom:1px solid #757575;
-    padding-left:1.5rem;
-    font-size:15px;
+    border-radius: 5px;
+    border: 1px solid #757575;
+    padding: 0.75rem 2.5rem 0.75rem 1.5rem; /* Adjust padding for the icon */
+    line-height: 1.5; /* Set line-height to center the text vertically */
+    font-size: 15px;
 }
-.input-group{
-    padding:1% 0;
-    position:relative;
+
+input:focus {
+    background-color: transparent;
+    outline: none;
+    border: 2px solid rgb(0, 0, 0);  /* Increase the border-width here for the focused state */
 }
-.input-group i{
-    position:absolute;
-    color:black;
+
+input::placeholder {
+    color: transparent;
 }
-input:focus{
-    background-color:transparent;
-    outline:transparent;
-    border-bottom:2px solid hsl(327, 90%,28%);
+
+.input-group i {
+    position: absolute;
+    right: 15px;
+    top: 57%;
+    /*transform: translateY(-50%);*/
+    color: #757575;
+    pointer-events: none; /* Prevent the icon from blocking input clicks */
 }
-input::placeholder{
-    color:transparent;
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    margin: 0.5rem 0 1.5rem 0; /* Add spacing between password field and button */
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: bold; /* Make the text bold */
 }
-label{
-    color:#757575;
-    position:relative;
-    left:1.2em;
-    top:-1.3em;
-    cursor:auto;
-    transition: 0.3s ease all;
+
+.forgot-password:hover {
+    text-decoration: underline;
 }
-input:focus~label,input:not(:placeholder-shown)~label{
-    top:-3em;
-    color:hsl(327,90%,28%);
-    font-size:15px;
+
+.btn {
+    font-size: 1.1rem;
+    padding: 8px 0;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    width: 100%;
+    background: rgb(0, 0, 0);
+    color: white;
+    cursor: pointer;
+    transition: 0.9s;
+    font-weight: bold; /* Make the button text bold */
+    margin: 0.1rem 0 1.5rem 0;
 }
-.btn{
-    font-size:1.1rem;
-    padding:8px 0;
-    border-radius:5px;
-    outline:none;
-    border:none;
-    width:100%;
-    background:rgb(124, 124, 26);
-    color:white;
-    cursor:pointer;
-    transition:0.9s;
+
+.btn:hover {
+    background: rgb(80, 80, 80);
 }
-.btn:hover{
-    background:rgb(78, 78, 13);
+
+.dashboard-container {
+    display: flex;
+    gap: 20px;
+}
+
+.profile-card, .info-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card {
+    width: 300px;
+}
+
+.profile-card i {
+    position: absolute;
+    right: 15px;
+    top: 57%;
+    /*transform: translateY(-50%);*/
+    color: #757575;
+    pointer-events: none;
+}
+
+.info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-card {
+    width: 300px;
 }
